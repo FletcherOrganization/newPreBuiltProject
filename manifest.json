@@ -1,0 +1,26 @@
+{
+  "bundleName": "@local/sample-prebuilt",
+  "version": "0.0.1",
+  "fingerprint": "65b016913ed58fb92233500e",
+  "createdEpoch": "1706038929905",
+  "artifacts": [
+    {
+      "id": "sample",
+      "name": "sample",
+      "type": "automation",
+      "location": "/bundles/automations/sample.json",
+      "properties": {
+        "entryPoint": false
+      }
+    },
+    {
+      "id": "Convert Time to Simple String",
+      "name": "Convert Time to Simple String",
+      "type": "workflow",
+      "location": "/bundles/workflows/Convert Time to Simple String.json",
+      "properties": {
+        "entryPoint": false
+      }
+    }
+  ]
+}

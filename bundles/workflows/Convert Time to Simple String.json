@@ -1,0 +1,188 @@
+{
+  "name": "Convert Time to Simple String",
+  "tasks": {
+    "1660": {
+      "name": "getTime",
+      "canvasName": "getTime",
+      "summary": "Get time",
+      "description": "Gets the current time with an optional offset, timezone shift, and format string",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "automatic",
+      "displayName": "Time",
+      "variables": {
+        "incoming": {
+          "timezone": "",
+          "offsetDuration": "",
+          "format": ""
+        },
+        "outgoing": {
+          "time": ""
+        }
+      },
+      "actor": "Pronghorn",
+      "groups": [],
+      "nodeLocation": {
+        "x": -408,
+        "y": -504
+      }
+    },
+    "workflow_start": {
+      "name": "workflow_start",
+      "groups": [],
+      "nodeLocation": {
+        "x": -84,
+        "y": -600
+      },
+      "x": 0,
+      "y": 0.5
+    },
+    "workflow_end": {
+      "name": "workflow_end",
+      "groups": [],
+      "nodeLocation": {
+        "x": -84,
+        "y": -132
+      },
+      "x": 1,
+      "y": 0.5
+    },
+    "0acc": {
+      "name": "convertTimeFormat",
+      "canvasName": "convertTimeFormat",
+      "summary": "Convert time format",
+      "description": "Converts an input time to a new format. Can be used to extract more complex sets of information than extractField",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "automatic",
+      "displayName": "Time",
+      "variables": {
+        "incoming": {
+          "inputTime": "$var.1660.time",
+          "newFormatString": "HH:mm:ss.sss"
+        },
+        "outgoing": {
+          "convertedTime": ""
+        }
+      },
+      "actor": "Pronghorn",
+      "groups": [],
+      "nodeLocation": {
+        "x": -84,
+        "y": -348
+      }
+    },
+    "4c83": {
+      "name": "query",
+      "canvasName": "query",
+      "summary": "Query Data Using 'json-query' Format",
+      "description": "Query data using a dot/bracket notation string and a matching key/value pair.",
+      "location": "Application",
+      "locationType": null,
+      "app": "WorkFlowEngine",
+      "type": "operation",
+      "displayName": "WorkFlowEngine",
+      "variables": {
+        "incoming": {
+          "pass_on_null": true,
+          "query": "time",
+          "obj": "$var.0acc.convertedTime"
+        },
+        "outgoing": {
+          "return_data": "$var.job.timeString"
+        }
+      },
+      "actor": "Pronghorn",
+      "groups": [],
+      "nodeLocation": {
+        "x": -348,
+        "y": -240
+      }
+    }
+  },
+  "transitions": {
+    "1660": {
+      "0acc": {
+        "state": "success",
+        "type": "standard"
+      }
+    },
+    "workflow_start": {
+      "1660": {
+        "state": "success",
+        "type": "standard"
+      }
+    },
+    "workflow_end": {},
+    "0acc": {
+      "4c83": {
+        "state": "success",
+        "type": "standard"
+      }
+    },
+    "4c83": {
+      "workflow_end": {
+        "state": "success",
+        "type": "standard"
+      }
+    }
+  },
+  "inputSchema": {
+    "type": "object",
+    "properties": {}
+  },
+  "outputSchema": {
+    "type": "object",
+    "properties": {
+      "_id": {
+        "type": "string",
+        "pattern": "^[0-9a-f]{24}$"
+      },
+      "initiator": {
+        "type": "string"
+      },
+      "timeString": {
+        "title": "return_data",
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "number"
+          },
+          {
+            "type": "object"
+          },
+          {
+            "type": "array"
+          },
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "examples": [
+          "value"
+        ]
+      }
+    }
+  },
+  "canvasVersion": 3,
+  "type": "automation",
+  "font_size": 12,
+  "errorHandler": null,
+  "preAutomationTime": 0,
+  "sla": 0,
+  "outputData": {},
+  "lastUpdatedVersion": "5.46.0-2023.1.15.0",
+  "createdVersion": "5.46.0-2023.1.13.0",
+  "last_updated": "2023-09-27T11:58:38.414Z",
+  "created": "2023-06-29T21:23:21.579Z",
+  "tags": [],
+  "groups": [],
+  "migrationVersion": 2
+}
