@@ -37,6 +37,9 @@ git add CHANGELOG.md
 
 echo "Configuring Github credentials"
 echo "GITHUB_ACTOR is $GITHUB_ACTOR"
+echo "GITHUB_TOKEN is $GITHUB_TOKEN"
+echo "GITHUB_REPOSITORY is $GITHUB_REPOSITORY"
+
 git config --global user.name '$GITHUB_ACTOR'
 git config --global user.email 'github-action@users.noreply.github.com'
 git remote set-url origin https://x-access-token:$GITHUB_TOKEN@github.com/$GITHUB_REPOSITORY
