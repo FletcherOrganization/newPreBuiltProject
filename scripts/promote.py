@@ -20,6 +20,18 @@ if not token:
   username = os.environ.get("IAP_USERNAME")
   pw = os.environ.get("IAP_PW")
 
+if not (artifact_path):
+  print("Missing artifact_path (sys.argv[1]).\nExiting...")
+  sys.exit(1)
+
+if not (hostname):
+  print("Missing hostname (IAP_HOSTNAME).\nExiting...")
+  sys.exit(1)
+
+if not ((token or (username and pw))):
+  print("Missing token or username/pw (IAP_TOKEN or IAP_USERNAME/IAP_PW).\nExiting...")
+  sys.exit(1)
+
 if not (artifact_path and hostname and (token or (username and pw))):
   print("Missing environmental variables.\nMake sure your environmental variables are set properly.\nExiting...")
   sys.exit(1)
