@@ -22,8 +22,8 @@
   },
   "manifest": {
     "bundleName": "@local/sample-prebuilt",
-    "fingerprint": "65b016913ed58fb92233500e",
-    "createdEpoch": "1706038929905",
+    "fingerprint": "65b2add60597412770bee162",
+    "createdEpoch": "1706208726144",
     "artifacts": [
       {
         "id": "sample",
@@ -101,8 +101,8 @@
             "name": "workflow_start",
             "groups": [],
             "nodeLocation": {
-              "x": -84,
-              "y": -600
+              "x": -408,
+              "y": -624
             },
             "x": 0,
             "y": 0.5
@@ -111,8 +111,8 @@
             "name": "workflow_end",
             "groups": [],
             "nodeLocation": {
-              "x": -84,
-              "y": -132
+              "x": -408,
+              "y": -168
             },
             "x": 1,
             "y": 0.5
@@ -139,8 +139,8 @@
             "actor": "Pronghorn",
             "groups": [],
             "nodeLocation": {
-              "x": -84,
-              "y": -348
+              "x": -408,
+              "y": -396
             }
           },
           "4c83": {
@@ -166,8 +166,8 @@
             "actor": "Pronghorn",
             "groups": [],
             "nodeLocation": {
-              "x": -348,
-              "y": -240
+              "x": -408,
+              "y": -276
             }
           }
         },
@@ -247,10 +247,16 @@
         "preAutomationTime": 0,
         "sla": 0,
         "outputData": {},
-        "lastUpdatedVersion": "5.46.0-2023.1.15.0",
+        "lastUpdatedVersion": "5.46.0-2023.1.30.0",
         "createdVersion": "5.46.0-2023.1.13.0",
-        "last_updated": "2023-09-27T11:58:38.414Z",
+        "last_updated": "2024-01-23T20:03:11.886Z",
         "created": "2023-06-29T21:23:21.579Z",
+        "last_updated_by": {
+          "provenance": "local_aaa",
+          "username": "admin@pronghorn",
+          "firstname": "admin",
+          "inactive": false
+        },
         "tags": [],
         "groups": [],
         "migrationVersion": 2
